@@ -13,7 +13,7 @@ function Header(params) {
   const moveUpOrDown = (delta) => {
     if (delta === 0) return;
     if (Date.now() - scrollTS < 400) {
-      scrollTS = Date.now();
+      // scrollTS = Date.now();
       return;
     }
     const upOrDown = delta < 0 ? 1 : -1;
