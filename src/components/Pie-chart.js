@@ -71,12 +71,12 @@ const PieChart = (props) => {
   };
   useEffect(() => {
     const reFreshLength = () => {
-      const m = Math.min(
+      const min = Math.min(
         areaRef.current.clientWidth,
         areaRef.current.clientHeight
       );
-      if (m != minLenght) {
-        setMinLenght(m);
+      if (min != minLenght) {
+        setMinLenght(min);
       }
     };
 
@@ -91,11 +91,11 @@ const PieChart = (props) => {
   }, [minLenght]);
 
   return (
-    <div className="flex items-center justify-center flex-col">
-      {language}
+    <div className="">
+      <div className="text-center"> {language}</div>
       <div
         ref={areaRef}
-        className="h-full w-full items-center justify-center flex"
+        className="h-full max-h-[150px] w-full items-center justify-center flex"
       >
         <canvas height={minLenght} width={minLenght} ref={circleRef} />
       </div>
